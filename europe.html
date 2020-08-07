@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <title>EUROPE</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://x3dom.org/release/x3dom.js"></script>
+    <link rel="stylesheet" href="https://x3dom.org/release/x3dom.css" />
+    <link rel="stylesheet" type="text/css" href="css/stat.css">
+    <script src="https://raw.githack.com/jamesleesaunders/d3-x3d/master/dist/d3-x3d.js"></script>
+  </head>
+  
+  <body>
+    <h1 style="margin-left: 490px">STATISTIQUE 3D </h1>
+     <h3 style="margin-left: 490px;color:red">Histogramme 3D EUROPE </h3>
+    <div id="chart2" style="margin-left: 400px"></div>
+    <div style="position: absolute; margin-left: 300px">
+     <h4>Explication:</h4>
+     <p>Cet histogramme 3D du continent d'EUROPE est représenté sur trois axes(x,y,z), </p>
+     <p> telque: X: le lieu; Y: la quantité de tweets; Z: le temps.  </p>
+     <p>Sur l'axe X on a représenté les pays du continent d'EUROPE; qui apparaissent dans les tajectoires.</p>
+     <p>On peut constaté tout simplement, que la quantité des tweets localisés en </p>
+     <p>Espagne(ES) est la plus élevé dans la période de Mai 2020, et Royaume-Uni(GB) en Juin 2020</p>
+    <p></p>
+    <h5>codes de pays (ISO 3166)</h5>
+    <p>FR : France</p>
+    <p>IT : Italie</p>
+    <p>ES : Espagne</p>
+    <p>DE : Allemagne</p>
+    <p>CH : Suisse</p>
+    <p>BE : Bzlgique</p>
+    <p>AL : Albanie</p>
+    <p>GB : Royaume-Uni</p>
+    <p>AT : Autriche</p>
+    <p>FI : Finlande</p>
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    <div style="margin-top: 650px">
+<div class="btn-group" style="width:100%">
+  <button style="width:14%"><a href="stat.html">GLOBAL</a> </button>
+  <button style="width:14%"><a href="Afrique.html">AFRIQUE</a> </button>
+  <button style="width:14%"><a href="europe.html">EUROPE</a></button>
+  <button style="width:15%"><a href="na.html">NORD AMERIQUE</a></button>
+  <button style="width:15%"><a href="sa.html">SUD AMERIQUE</a></button>
+  <button style="width:14%"><a href="asie.html">ASIE</a></button>
+  <button style="width:14%"><a href="australie.html">AUSTRALIE</a></button>
+</div>
+</div>
+    
+     
+
+    <script>
+      // Select chartholder
+      
+
+var chart2 = d3.select("#chart2");
+var myData2 = [
+        {
+          key: "Mai 2020",
+          values: [
+            { key: "FR", value: 2 },
+            { key: "IT", value: 1 },
+            { key: "ES", value: 7 },
+            { key: "DE", value: 1 },
+            { key: "CH", value: 4 },
+            { key: "BE", value: 1 },
+            { key: "AL", value: 1 },
+            { key: "GB", value: 1 },
+            { key: "AT", value: 0 },
+            { key: "FI", value: 0 }
+            
+          ]
+
+        },
+        {
+          key: "Juin 2020",
+          values: [
+            { key: "FR", value: 4 },
+            { key: "IT", value: 1 },
+            { key: "ES", value: 5 },
+            { key: "DE", value: 1 },
+            { key: "CH", value: 2 },
+            { key: "BE", value: 0 },
+            { key: "AL", value: 0 },
+            { key: "GB", value: 6 },
+            { key: "AT", value: 1 },
+            { key: "FI", value: 1 }
+            
+          ]
+
+        }
+
+      ];
+
+  var myChart2 = d3.x3d.chart.barChartMultiSeries();
+
+      // Attach chart and data to the chartholder
+      chart2
+        .datum(myData2)
+        .call(myChart2);
+    </script> 
+  </body>
+  
+</html>
